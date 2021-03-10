@@ -33,12 +33,12 @@ const Lister = () => {
 
 	return (
 		<>
-			{loading && 'Loading...'}
-			{allPosts.length === 0 && 'No posts available...'}
+			{ loading && <div>Loading...</div> }
+			{allPosts.length === 0 && <div>No posts available...</div>}
 			<div className="postList">
 				{
 					allPosts.map((post) => {
-						return <Post title={post.title} body={post.body} author={post.author} onDelete={onDeletePost} id={post.id} />
+						return <Post title={post.title} body={post.body} author={post.author} onDelete={onDeletePost} id={post.id} key={post.id} />
 					})}
 			</div>
 			<div className="postList">
